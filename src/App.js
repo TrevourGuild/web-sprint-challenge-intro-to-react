@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import './App.css'
 import Character from './components/Character'
+import Details from './components/Details'
 import axios from 'axios'
+
 
 
 const App = () => {
@@ -16,8 +18,8 @@ const App = () => {
   const [characters, setCharacters] = useState([])
   const [currentCharIndex, setCurrentCharIndex] = useState(null)
 
-  const openDetails = index => {
-    setCurrentCharIndex(index)
+  const openDetails = name => {
+    setCurrentCharIndex(name)
   }
 
   const closeDetails = () => {
@@ -45,6 +47,9 @@ const App = () => {
         characters.map(ch =>{
           return <Character key={ch.name} info={ch} action={openDetails}/>
         })
+      }
+      {
+        currentCharIndex && <Details charactor = {currentCharIndex} close ={closeDetails}/>
       }
     </div>
   );
