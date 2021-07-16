@@ -22,7 +22,7 @@ const StyledDetails = styled.div`
 `
 
 export default function Details(props){
-    const {charactor, close} = props
+    const {characterId, close} = props
     const [details, setDetails] = useState("")
 
 
@@ -52,7 +52,7 @@ export default function Details(props){
         .catch(err => {
         console.log(err)
     })
- }, [charactor])
+ }, [characterId])
 
 
 
@@ -62,7 +62,7 @@ export default function Details(props){
          <div>
          <h2>Details</h2>
         {
-            details && 
+            details &&
             <>
             <p>Gender: {details.gender}</p>
             <p>Height: {details.height}</p>
@@ -72,7 +72,6 @@ export default function Details(props){
             <p>Hair Color: {details.hair_color}</p>
             <p>Skin Color: {details.skin_color}</p>
             </>
-
         }
         <button onClick = {close}>^</button>
         </div>

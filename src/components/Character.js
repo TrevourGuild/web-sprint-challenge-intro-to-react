@@ -31,7 +31,7 @@ color: ${props => props.theme.white};
 }
 `
 
-export default function Character({ info, action }){
+export default function Character({info, action}){
     return (
         <StyledFriend className = 'character'>
             {info.name}

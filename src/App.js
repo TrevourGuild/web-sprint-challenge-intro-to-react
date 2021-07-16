@@ -18,8 +18,8 @@ const App = () => {
   const [characters, setCharacters] = useState([])
   const [currentCharIndex, setCurrentCharIndex] = useState(null)
 
-  const openDetails = name => {
-    setCurrentCharIndex(name)
+  const openDetails = id => {
+    setCurrentCharIndex(id)
   }
 
   const closeDetails = () => {
@@ -49,7 +49,7 @@ const App = () => {
         })
       }
       {
-        currentCharIndex && <Details charactor = {currentCharIndex} close ={closeDetails}/>
+        currentCharIndex && <Details  characterId = {setCurrentCharIndex} close ={closeDetails}/>
       }
     </div>
   );
